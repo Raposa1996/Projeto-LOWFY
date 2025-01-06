@@ -1,0 +1,97 @@
+/* Estilo para o corpo da página */
+body {
+    background-image: url("https://rockinbh.com.br/wp-content/uploads/2022/03/ilias-chebbi-2gpfqhEFVZ8-unsplash-1024x613.jpg");
+    background-size: cover; /* Faz a imagem de fundo cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem de fundo */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Garante que o corpo ocupe toda a altura da janela */
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white; /* Define o texto branco para contraste */
+  }
+  
+/* Estilo global */
+
+/* Estilo da aplicação principal */
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.App h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #1db954; /* Verde no estilo Spotify */
+}
+
+/* Estilo da barra de navegação */
+nav {
+  background-color: #1e1e1e;
+  padding: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+nav li {
+  display: inline;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #1db954;
+  color: #121212;
+}
+
+/* Links ativos (exemplo, pode ser gerido por uma classe) */
+nav a.active {
+  background-color: #1db954;
+  color: #121212;
+}
+
+/* Estilo para o conteúdo principal */
+.App-content {
+  margin-top: 40px;
+  padding: 20px;
+}
+
+.App-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 1rem;
+  }
+
+  .App h1 {
+    font-size: 2rem;
+  }
+}
