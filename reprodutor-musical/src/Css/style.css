@@ -1,97 +1,373 @@
 /* Estilo para o corpo da página */
 body {
-    background-image: url("https://rockinbh.com.br/wp-content/uploads/2022/03/ilias-chebbi-2gpfqhEFVZ8-unsplash-1024x613.jpg");
-    background-size: cover; /* Faz a imagem de fundo cobrir toda a tela */
-    background-position: center; /* Centraliza a imagem de fundo */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* Garante que o corpo ocupe toda a altura da janela */
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: white; /* Define o texto branco para contraste */
-  }
-  
-/* Estilo global */
-
-/* Estilo da aplicação principal */
-.App {
-  text-align: center;
-  padding: 20px;
+  background-image: url("https://rockinbh.com.br/wp-content/uploads/2022/03/ilias-chebbi-2gpfqhEFVZ8-unsplash-1024x613.jpg");
+  background-size: cover; /* Garante que a imagem cubra toda a tela *
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Não repete a imagem */
+  background-attachment: fixed; /* A imagem de fundo não move quando a página é rolada */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Garante que o corpo ocupe toda a altura da janela */
+  margin: 0; /* Remove margens padrão */
+  font-family: 'Poppins', sans-serif;
+  color: white;
 }
 
-.App h1 {
+/* Título principal */
+.title {
   font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #1db954; /* Verde no estilo Spotify */
+  font-weight: 600;
+  text-align: center;
+  margin: 20px 0;
+  transition: transform 0.3s ease-in-out; /* Adiciona transição ao tamanho */
+}
+
+/* Efeito de Hover no título */
+.title:hover {
+  transform: scale(1.2); /* Aumenta o tamanho do texto */
+}
+
+/* Subtítulo */
+.subtitle {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-align: center;
+  margin: 20px 0;
+  transition: transform 0.3s ease-in-out; /* Adiciona transição ao tamanho */
+}
+
+/* Efeito de Hover no subtítulo */
+.subtitle:hover {
+  transform: scale(1.2); /* Aumenta o tamanho do texto */
 }
 
 /* Estilo da barra de navegação */
 nav {
-  background-color: #1e1e1e;
-  padding: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Ocupa toda a largura da janela */
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Alinha itens nas extremidades */
+  backdrop-filter: blur(10px);
+  background-color: rgba(20, 20, 20, 0.8); /* Fundo semitransparente */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  z-index: 1000; /* Garante que fique acima do conteúdo */
+  padding: 0 40px; /* Espaçamento interno nas laterais */
 }
 
+/* Lista de navegação */
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: center;
-  padding: 0;
+  gap: 50px; /* Espaçamento entre os itens */
   margin: 0;
-  gap: 20px;
+  padding: 0;
+  margin-top: 10px;
 }
 
+/* Itens da navegação */
 nav li {
-  display: inline;
+  display: inline-block;
 }
 
+/* Links da navegação */
 nav a {
   text-decoration: none;
   color: #ffffff;
   font-size: 1.2rem;
-  padding: 10px 20px;
-  border-radius: 25px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  transition: transform 0.3s ease-in-out; /* Adicionando transição no transform */
 }
 
+/* Efeito de Hover no link */
 nav a:hover {
-  background-color: #1db954;
-  color: #121212;
+  transform: scale(1.2); /* Aumenta o tamanho do texto */
 }
 
-/* Links ativos (exemplo, pode ser gerido por uma classe) */
+/* Links ativos */
 nav a.active {
   background-color: #1db954;
   color: #121212;
+  font-weight: bold;
 }
 
-/* Estilo para o conteúdo principal */
-.App-content {
-  margin-top: 40px;
-  padding: 20px;
-}
-
-.App-content h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+/* Botão estilizado no nav */
+nav .nav-button {
+  background-color: #1db954;
   color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-/* Responsividade */
+
+/* Estilo para a div de pesquisa */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 25px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+  transition: transform 0.3s ease;
+}
+
+/* Efeito de Hover na Div de Pesquisa */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 180px auto 50px; /* Ajuste o valor de margin-top para ser maior que a altura da navbar */
+  padding: 25px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px); /* Efeito de desfoque no fundo */
+  transition: transform 0.3s ease;
+}
+
+
+/* Input de Pesquisa */
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: 2px solid #1db954;
+  background-color: #121212;
+  color: white;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Efeito de Foco no Input */
+.search-input:focus {
+  outline: none;
+  border-color: #0e90e7; /* Muda a borda ao focar */
+}
+
+/* Botão de Buscar */
+.search-button {
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  color: white;
+  background-color: #1db954;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Efeito de Hover no Botão */
+.search-button:hover {
+  background-color: #0e90e7; /* Altera a cor ao passar o mouse */
+}
+
+/* Efeito de Clique no Botão */
+.search-button:active {
+  transform: scale(0.95); /* Leve redução ao clicar */
+}
+
+/* Lista de Vídeos */
+.video-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.video-item {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 10px;
+  padding: 15px;
+  width: 300px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de Hover nos Itens da Lista */
+.video-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Título do Item da Lista */
+.video-item-title {
+  font-size: 1.1rem;
+  color: white;
+  margin: 10px 0;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Canal do Item da Lista */
+.video-item-channel {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* Thumbnail do Item da Lista */
+.video-thumbnail {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+/* Efeito de Hover na Thumbnail */
+.video-thumbnail:hover {
+  transform: scale(1.05);
+}
+
+/* Player de Música */
+/* Player de Música */
+.video-container {
+  margin-top: 50px;
+  text-align: center;
+  animation: fadeIn 1s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza o conteúdo horizontalmente */
+  justify-content: center; /* Centraliza o conteúdo verticalmente */
+  min-height: 60vh; /* Garante que o player tenha altura suficiente */
+}
+
+/* Outros estilos podem ser mantidos inalterados */
+
+
+.video-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.video-channel {
+  font-size: 1rem;
+  color: #bbb;
+  margin-bottom: 20px;
+}
+
+.react-player {
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Botão Play/Pause */
+.play-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #1db954;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 20px;
+}
+
+/* Efeito de Hover no Botão Play/Pause */
+.play-button:hover {
+  background-color: #0e90e7;
+}
+
+/* Efeito de Clique no Botão Play/Pause */
+.play-button:active {
+  transform: scale(0.95);
+}
+
+/* Responsividade para Telas Menores */
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
+  .search-container {
+    width: 90%;
+    padding: 15px;
   }
 
-  nav a {
+  .video-item {
+    width: 100%;
+  }
+
+  .search-button {
     font-size: 1rem;
+    padding: 10px 18px;
   }
+}
 
-  .App h1 {
-    font-size: 2rem;
-  }
+/* Botão Próxima Página no Canto Inferior Direito */
+.next-page-button {
+  background-color: #1db954; /* Cor de fundo igual ao botão da barra de navegação */
+  color: #ffffff; /* Texto branco */
+  border: none;
+  padding: 12px 25px; /* Espaçamento interno */
+  border-radius: 25px; /* Borda arredondada */
+  font-size: 1.2rem; /* Tamanho da fonte */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease; /* Transições para a cor de fundo e o efeito de clique */
+  position: fixed; /* Fixa o botão na tela */
+  bottom: 20px; /* Distância do fundo */
+  right: 20px; /* Distância da borda direita */
+  z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra suave */
+}
+
+/* Efeito de Hover no Botão Próxima Página */
+.next-page-button:hover {
+  background-color: #0e90e7; /* Cor ao passar o mouse */
+  transform: translateY(-5px); /* Leve movimento para cima */
+}
+
+/* Efeito de Clique no Botão Próxima Página */
+.next-page-button:active {
+  transform: scale(0.95); /* Leve redução no tamanho ao clicar */
+}
+/* Botão Página Anterior no Canto Inferior Esquerdo */
+.previous-page-button {
+  background-color: #1db954; /* Cor de fundo igual ao botão da barra de navegação */
+  color: #ffffff; /* Texto branco */
+  border: none;
+  padding: 12px 25px; /* Espaçamento interno */
+  border-radius: 25px; /* Borda arredondada */
+  font-size: 1.2rem; /* Tamanho da fonte */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s ease; /* Transições para a cor de fundo e o efeito de clique */
+  position: fixed; /* Fixa o botão na tela */
+  bottom: 20px; /* Distância do fundo */
+  left: 20px; /* Distância da borda esquerda */
+  z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra suave */
+}
+
+/* Efeito de Hover no Botão Página Anterior */
+.previous-page-button:hover {
+  background-color: #0e90e7; /* Cor ao passar o mouse */
+  transform: translateY(-5px); /* Leve movimento para cima */
+}
+
+/* Efeito de Clique no Botão Página Anterior */
+.previous-page-button:active {
+  transform: scale(0.95); /* Leve redução no tamanho ao clicar */
 }
